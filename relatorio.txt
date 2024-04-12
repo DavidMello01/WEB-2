@@ -1,0 +1,3 @@
+Em python, o send é basicamente uma mensagem de hello world que é enviada, já o receive, 
+ele receb eo que foi mandado e imprime na tela. Desse modo, o send envia a mensagem Hello World pra fila "HellO" 
+e o receive recebe a msg Hello World da fila "hello" e imprime na tela de modo assíncrono
