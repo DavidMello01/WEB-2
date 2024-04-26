@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat em Tempo Real</title>
+</head> <!--hihi que legal-->
+<body>
+    <h1>Chat em Tempo Real</h1>
+    <div id="chat"></div>
+    <form id="message-form">
+        <input type="text" id="message" placeholder="Digite sua mensagem...">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Conecta-se ao servidor SSE
+        const eventSource = new EventSource('/stream');
+
+        // Adiciona um ouvinte de eventos para receber mensagens do servidor
+        eventSource.addEventListener('message', function(event) {
+            const chatDiv = document.getElementById('chat');
+            const message = event.data;
+            chatDiv.innerHTML += `<p>${message}</p>`;
+        });
+
+        // Envia mensagens para o servidor quando o formulário for enviado
+        document.getElementById('message-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value.trim();
+            if (message) {
+                fetch('/send_message', {
+                    method: 'POST',
+                    body: new URLSearchParams({ 'message': message }),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                });
+                messageInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
