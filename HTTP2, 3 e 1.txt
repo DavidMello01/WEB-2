@@ -1,0 +1,34 @@
+1 - Principais diferencas entre o HTTP e HTTP/2
+-> Multiplexação:
+	HTTP/2 pertmite que multiplos pedidos e respostas viajm em paralelo no mesmo canal, o HTTP/1 p´recisa de várias conexções para tal
+
+-> Compactação de cabeçalhos
+	HTTP/2 usa HPACK pra comprimir e reduzir seus headers e com isso tem a redução dos overheads enquanto o outro sequer oferece isso
+
+-> HTTP/2 é binário, enquanto o outro é textual. Por conta disso ele se torna mais eficiente pra processamento de servidores-cliente
+
+2 - Principais Vantagens
+
+-> Reduçao de Overheads
+-> Processamento mais rapido/eficiente
+-> Multiplexação 
+-> Seguranca -> Reforçou aindam ais o uso do TLS
+
+3. Desvantagens
+
+-> Complexidade
+	Ele é mais complexo de se implantar quando comparado com o /1, o que pode dificultar em alguns casos
+
+-> Compatibilidade
+	Nem todos servidores-cliente tem suporte para o HTTP/2
+
+4. Cabeçalhos Push
+	Permitem que o server envie recursos adicionais para o cliente antes que o cliente solicite os mesmos.
+	Podem ser extremamente úteis para enviar um recurso na situação que o servidor SABE que vai ser solicitado mais cedo ou mais tarde, tal qual
+	enviar os recursos de script e css quando uma pagina web estiver sendo carregada
+
+5. Principais diferencas HTTP/3 - /2
+	o /3 usa o protocolo de transporte QUIC enquanto o /2 utiliza TCP
+	O QUIC permite multiplexações mais eficientes que o TCP
+	Handshakes mais rápidos, o que melhorea o tempo de estabelecimento de conexções
+	QUIC é mais resiliente pra perdas de pacotes quando comparado com o TCP
