@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+    background-color: #f8f9fa; /* cor de fundo padrão */
+    color: #343a40; /* cor do texto padrão */
+  }
+  .dark-theme {
+    background-color: #343a40; /* cor de fundo para tema escuro */
+    color: #f8f9fa; /* cor do texto para tema escuro */
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .carousel-item {
+    min-width: 100%;
+    flex: 0 0 auto;
+  }
+  .theme-button {
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+  }
+  .theme-button:hover {
+    background-color: #0056b3;
+  }
